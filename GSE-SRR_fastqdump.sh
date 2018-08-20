@@ -37,3 +37,7 @@ while IFS=$'\t' read -r -a myArray
 do  
     fastq-dump -I --split-files --gzip "${myArray[0]}"
 done < SRA_Accessions_Trimmed.tab
+
+# Remove intermediate files
+rm SRA_Accessions.tab
+rm SRA_Accessions_Trimmed.tab
